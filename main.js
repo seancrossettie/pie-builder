@@ -85,7 +85,19 @@ const pieBuilder = (taco) => {
   printToDom('#pies', domString);
 }
 
+const handleButtonClick = (e) => {
+  console.log(e.target.id);
+}
+
+const buttonEvents = () => {
+  const allBtn = document.querySelector('#All').addEventListener('click', handleButtonClick);
+  const docBtn = document.querySelector('#Doc').addEventListener('click', handleButtonClick);
+  const ajaBtn = document.querySelector('#Aja').addEventListener('click', handleButtonClick);
+  const trinityBtn = document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+}
+
 const init = () => {
+  buttonEvents();
   pieBuilder(pies);
 }
 
