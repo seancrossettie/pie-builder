@@ -89,16 +89,16 @@ const handleButtonClick = (e) => {
   const buttonId = e.target.id;
 
   if (buttonId === 'Trinity') {
-    // dark mode
+    
     document.querySelector('body').style.backgroundColor = '#000';
   } else if (buttonId === 'Doc') {
-    // light mode
+    
     document.querySelector('body').style.backgroundColor = '#FFF';
   } else if (buttonId === 'Aja') {
-    // medium mode
+    
     document.querySelector('body').style.backgroundColor = '#808080';
   } else if (buttonId === 'All') {
-  // default mode
+    
     document.querySelector('body').style.backgroundColor = 'rgb(175, 196, 175)';
   }
 
