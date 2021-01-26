@@ -86,7 +86,38 @@ const pieBuilder = (taco) => {
 }
 
 const handleButtonClick = (e) => {
-  console.log(e.target.id);
+  const buttonId = e.target.id;
+
+  if (buttonId === 'Trinity') {
+    
+    document.querySelector('body').style.backgroundColor = '#000';
+  } else if (buttonId === 'Doc') {
+    
+    document.querySelector('body').style.backgroundColor = '#FFF';
+  } else if (buttonId === 'Aja') {
+    
+    document.querySelector('body').style.backgroundColor = '#808080';
+  } else if (buttonId === 'All') {
+    
+    document.querySelector('body').style.backgroundColor = 'rgb(175, 196, 175)';
+  }
+
+  // update the pies based on button clicked
+
+  const selectedPies = [];
+
+  for (let i = 0; i < pies.length; i++) {
+    if (pies[i].instructor === buttonId) {
+      selectedPies.push(pies[i]);
+    }
+  }
+  
+  if (buttonId === 'All') {
+    pieBuilder(pies);
+  } else {
+    pieBuilder(selectedPies);
+  }
+  
 }
 
 const buttonEvents = () => {
