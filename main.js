@@ -120,16 +120,39 @@ const handleButtonClick = (e) => {
   
 }
 
-const buttonEvents = () => {
-  const allBtn = document.querySelector('#All').addEventListener('click', handleButtonClick);
-  const docBtn = document.querySelector('#Doc').addEventListener('click', handleButtonClick);
-  const ajaBtn = document.querySelector('#Aja').addEventListener('click', handleButtonClick);
-  const trinityBtn = document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+const getFormInfo = (e) => {
+  e.preventDefault();
+  const name = document.querySelector('#name').value;
+  const ingredients = document.querySelector('#ingredients').value;
+  const bakeTemp = document.querySelector('#bakeTemp').value;
+  const drinkPairing = document.querySelector('#drinkPairing').value;
+  const imageUrl = document.querySelector('#imageUrl').value;
+  const instructor = document.querySelector('#instructor').value;
+  const iceCream = document.querySelector('#iceCream').value;
+
+  const obj = {
+    name,
+    bakeTemp,
+    ingredients,
+    drinkPairing,
+    imageUrl,
+    instructor,
+    iceCream,
+  }
+  console.log(obj);
 }
 
-const init = () => {
-  buttonEvents();
+const buttonEvents = () => {
+  document.querySelector('#All').addEventListener('click', handleButtonClick);
+  document.querySelector('#Doc').addEventListener('click', handleButtonClick);
+  document.querySelector('#Aja').addEventListener('click', handleButtonClick);
+  document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+  document.querySelector('form').addEventListener('submit', getFormInfo);
+}
+
+function init() {
   pieBuilder(pies);
+  buttonEvents();
 }
 
 init();
